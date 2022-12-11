@@ -1,7 +1,7 @@
 const source = document.querySelector('[data-id="source"]');
 
 (async () => {
-  const res = await fetch('/example.rb')
+  const res = await fetch('example.rb')
   source.value = await res.text();
 })();
 
