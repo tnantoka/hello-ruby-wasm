@@ -1,6 +1,12 @@
+const source = document.querySelector('[data-id="source"]');
+
+(async () => {
+  const res = await fetch('/example.rb')
+  source.value = await res.text();
+})();
+
 document.querySelector('[data-id="run"]').addEventListener('click', (e) => {
   e.preventDefault();
 
-  const source = document.querySelector('[data-id="source"]').value;
-  rubyVM.eval(source);
+  rubyVM.eval(source.value);
 });
